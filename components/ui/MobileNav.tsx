@@ -54,26 +54,34 @@ const MobileNav = () => {
                       <Link
                         href={item.route}
                         key={item.label}
-                        className={cn("sidebar-link", {
+                        className={cn("mobilenav-sheet_close w-full", {
                           "bg-bank-gradient": isActive,
                         })}
                       >
-                        <div className="relative size-5">
-                          <Image
-                            src={item.imgURL}
-                            fill
-                            alt={item.label}
-                            className={cn({
-                              "brightness-[3] invert-0": isActive,
-                            })}
-                          />
-                        </div>
+                        <Image
+                          src={item.imgURL}
+                          width={20}
+                          height={20}
+                          alt={item.label}
+                          className={cn({
+                            "brightness-[3] invert-0": isActive,
+                          })}
+                        />
+                        <p
+                          className={cn("text-16 font-semibold text-black-2", {
+                            "text-white": isActive,
+                          })}
+                        >
+                          {item.label}
+                        </p>
                       </Link>
                     </SheetClose>
                   );
                 })}
+                User
               </nav>
-            </SheetClose>
+                      </SheetClose>
+                      footer
           </div>
         </SheetContent>
       </Sheet>
